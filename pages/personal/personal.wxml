@@ -1,0 +1,31 @@
+<view class="personal_class_container">
+  <view
+    bindtap="showAddKnoModal"
+    class="personal_class_header">＋新增知识＋</view> <!--按钮修改样式-->
+  <view
+    class="class_card"
+    wx:for="{{knoList}}"
+    wx:key="{{index}}"
+    wx:for-item="kno"
+    bindtap="showKnoDetail"
+    data-id="{{kno.id}}"
+  >
+    <view>
+      <view class="class_card_title">{{kno.title}}</view>
+      <view class="class_card_createTime">{{kno.createTime}}</view>
+    </view>
+    <view class="class_card_delete">
+      <image
+        hover-stop-propagation='true'
+        catchtap="deleteKno"
+        data-id="{{kno.id}}"
+        src="/resources/images/delete.png"></image>
+    </view>
+  </view>
+</view>
+
+<personal-kno-modal
+    wx:if="{{addKnoModal}}"
+    bindhideModal="hideAddKnoModal"
+    bindonConfirm="addKnoConfirm"
+/>

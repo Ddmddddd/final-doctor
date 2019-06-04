@@ -1,0 +1,16 @@
+<!-- components/drug-add-modal/drug-add-modal.wxml -->
+<view class="modal-mask" style='z-index: 900;'
+    catchtouchmove="preventTouchMove"
+    bindtap="hideModal"
+></view>
+<view class="modal-dialog" style='z-index: 990'>
+    <view class="modal-title">随访备注</view>
+    <view class="modal-content">
+       <text>随访记录</text>
+       <view class="followup_content" wx:for="{{list}}"> 
+           <text>{{item.finishTime}}</text>
+           <text>{{item.note ? item.note : '无记录'}}</text>
+       </view>
+       <view class="followup_footer" bindtap="hideModal"><text>点击隐藏</text></view>
+    </view>
+</view>

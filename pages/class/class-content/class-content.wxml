@@ -1,0 +1,28 @@
+<!-- pages/class/class-learn/class-learn.wxml -->
+<view class="container">
+  <!-- <view class="header">学习进度：{{studyList.length}}/{{studyIndex+1}}</view> -->
+  <scroll-view scroll-y="{{true}}" style="height:85vh;background-color: white">
+    <view class="title">{{studyingItem.title}}</view>
+    <import src="../../../wxParser/index.wxml" />
+    <view wx:if="{{studyingItem.type == '1'}}"class="wxParser">
+      <template is="wxParser" data="{{wxParserData:richText.nodes}}" />
+    </view>
+    <image src="{{studyingItem.content}}" wx:elif="{{studyingItem.type == '2'}}" mode="widthFix" class="image-content"/>
+    <view wx:else>
+      <video  src="{{studyingItem.url}}" class="video-content" />
+      <view class="wxParser">{{studyingItem.des}}</view>
+    </view>
+    <!-- <view>
+      <button bindtap="finishLearning" class="confirm-button">
+        {{(studyList.length - 1) <= studyIndex ? '完成学习':'下一篇'}}
+      </button>
+    <view style="height:40px"></view>
+  </view> -->
+  </scroll-view>
+  <!-- <view class="footer">
+    <view bindtap="favorChange">
+      <image src="{{studyingItem.favor?'../../../image/like.png':'../../../image/dislike.png'}}" />
+      <text>收藏</text>
+    </view>
+  </view> -->
+</view>

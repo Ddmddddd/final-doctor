@@ -1,0 +1,18 @@
+<!-- components/top-tabbar/top-tabbar.wxml -->
+<view >
+  <view class="navbar">
+    <block wx:for="{{tabbarData.tabs}}" wx:key="index">
+      <view id='{{index}}' class="{{activeIndex == index?'navbar_item_on navbar_item':'navbar_item'}}" bindtap='tabClick'>
+        <view class="navbar_title">{{item}}</view>
+      </view>
+    </block>
+    <view class="navbar_slider" style="width:{{tabbarData.navbarWidth}}vw; transform:translateX({{tabbarData.navbarWidth*7.5*activeIndex}}rpx)"></view>
+  </view>
+  <swiper class="content" duration="50" style="height: 88vh" bindchange="swiperChange" current="{{activeIndex}}">
+    <swiper-item wx:for="{{tabbarData.tabs}}" wx:key="index">
+      <scroll-view scroll-y="{{true}}" style="height:75vh" bindscrolltolower="scrollLower" data-index="{{index}}">
+        <slot name='toptab{{index}}'></slot>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

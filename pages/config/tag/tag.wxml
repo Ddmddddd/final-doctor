@@ -1,0 +1,25 @@
+<view class="tag_container">
+  <view class="tag_content">
+    <view class="tag_parent_content"
+        wx:for="{{tagList}}"
+        wx:for-item="parent"
+        wx:for-index="parentIndex"
+        wx:key="{{parentIndex}}"
+    >
+      <view><text>{{parent.name}}</text></view>
+      <view>
+        <patient-tag
+          wx:for="{{parent.typeList}}"
+          wx:key="{{index}}"
+          tag="{{item}}"
+          binddeleteTag="deleteTag"
+        />
+      </view>
+    </view>
+  </view>
+  <!-- <view class="addtag_container">
+    <text>输入标签:</text>
+    <input value="{{name}}" bindinput="inputNameChange" bindconfirm="addNewTag"/>
+    <view bindtap="addNewTag">添加标签</view>
+  </view> -->
+</view>

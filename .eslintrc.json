@@ -1,0 +1,40 @@
+{
+  "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+      "ecmaVersion": 2015,
+      "sourceType": "module"
+  },
+  "rules": {
+      "no-console": "off",
+      "indent": [
+          "error",
+          2
+      ],
+      "linebreak-style": [
+          "error",
+          "unix"
+      ],
+      "quotes": [
+          "error",
+          "single"
+      ],
+      "semi": [
+          "error",
+          "never"
+      ]
+  },
+  "globals": {
+      "wx": null,
+      "App": null,
+      "Page": null,
+      "getApp": null,
+      "Component": null,
+      "module": null,
+      "requirePlugin": null
+  }
+}

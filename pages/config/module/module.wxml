@@ -1,0 +1,14 @@
+<view class="module_container">
+  
+  <view
+    wx:for="{{moduleList}}"
+    wx:key="{{index}}"
+    bindtap="editSelectTag"
+    data-id="{{item.id}}"
+    class="module_item"
+  >
+    <view style="background-color: {{item.color}}"></view>
+    <text>{{item.name}}</text>
+  </view>
+
+</view>

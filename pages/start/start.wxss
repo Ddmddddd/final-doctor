@@ -1,0 +1,12 @@
+.loading_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading_container > image {
+  margin-top: 200px;
+  width: 340rpx;
+  height: 340rpx;
+}

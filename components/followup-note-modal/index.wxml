@@ -1,0 +1,13 @@
+<!-- components/drug-add-modal/drug-add-modal.wxml -->
+<view class="modal-mask" style='z-index: 900;' catchtouchmove="preventTouchMove"></view>
+<view class="modal-dialog" style='z-index: 990'>
+    <view class="modal-title">添加随访备注</view>
+    <view class="modal-content">
+       <text>输入随访备注</text>
+       <textarea placeholder="请此次随访的备注" value="{{note}}" bindinput="inputNote"/>
+    </view>
+    <view class="modal-footer">
+        <view  bindtap="hideModal" data-status="cancel">取消</view>
+        <view  bindtap="onConfirm" data-status="confirm">确定</view>
+    </view>
+</view>

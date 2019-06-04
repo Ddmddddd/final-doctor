@@ -1,0 +1,225 @@
+/* pages/manage/manage.wxss */
+.patient-content{
+    width: 100%;
+    margin-top: 16vh;
+}
+.basic{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+.basic > view:nth-child(2){
+    height: 140rpx;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.title{
+    width: 480rpx;
+    font-size: 32rpx;
+    /* padding-right: 20rpx; */
+    padding: 6px 10px 6px 0;
+    border: 1px solid #33ccff;
+    border-right-width: 10rpx;
+    border-left-width: 0;
+    background-color: rgba(51, 204, 255, 0.65);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin-right: 40rpx;
+}
+.title > text:first-child{
+    font-weight: 600;
+    font-size: 40rpx;
+}
+
+.followup{
+    display: flex;
+    flex-direction: column;
+}
+.content{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+.followup .content > view:first-child{
+    width: 70%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+.followup .content > view:nth-child(2){
+    width:24%;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+.manage_main_container > image,
+.manage_main_container > view > image,
+.manage_main_container > view > view > image, 
+.manage_main_container > view > view > view > image {
+    padding: 18rpx;
+}
+.tag{
+    width: 70rpx;
+    height: 40rpx;
+    /* border: 1px solid #1195db; */
+    box-shadow:0px 0px 1px 1px rgba(0, 191, 255, 0.7);
+    font-size: 26rpx;
+    line-height: 40rpx;
+    text-align: center;
+    color: white;
+    /* background-color: #1195db; */
+    border-radius: 5%;
+    overflow: hidden;
+    margin-left:30rpx;
+}
+.detail{
+    width: 400rpx;
+    padding: 0 12rpx;
+    overflow:hidden; 
+    text-overflow:ellipsis;
+    display:-webkit-box; 
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+/**
+*tag color 
+*/
+.tag {
+    /* background-color: #ffa500;
+    border: 1px solid #ffa500; */
+    box-shadow:0px 0px 1px 1px rgba(0, 0, 0, 0.3); 
+}
+.sport{
+    background-color: #ffa500;
+    border: 1px solid #ffa500;
+    box-shadow:0px 0px 1px 1px rgba(255, 165, 0, 0.7);
+}
+.alcohol{
+    background-color: #f08080;
+    border: 1px solid #f08080;
+    box-shadow:0px 0px 1px 1px rgba(240, 128, 128, 0.7);
+}
+.food{
+    background-color: #32cd32;
+    border: 1px solid #32cd32;
+    box-shadow:0px 0px 1px 1px rgba(50, 205, 50, 0.7);
+}
+.smoke{
+    background-color: #808080;
+    border: 1px solid #808080;
+    box-shadow:0px 0px 1px 1px rgba(128, 128, 128, 0.7);
+}
+.drug{
+    
+}
+.self{
+    background-color: #7b68ee;
+    border: 1px solid #7b68ee;
+    box-shadow:0px 0px 1px 1px rgba(123, 104, 238, 0.7);
+}
+
+.manage_content {
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.manage_content > image {
+    width: 22px;
+    height: 22px;
+}
+
+.schedule_detail > text:first-child{
+    font-size: 14px;
+}
+
+.schedule_detail > text:last-child {
+    font-size: 12px;
+    color: gray;
+}
+
+.education > view:not(:first-child) {
+    width: 90%;
+    margin-left: 5%;
+    font-size: 16px;
+}
+
+.blood_pressure > view:not(:first-child) {
+    width: 90%;
+    margin-left: 5%;
+}
+ec-canvas {
+    display: block;
+    width: 100%;
+    height: 220px;
+}
+
+/* 患者标签 */
+.patient_tag_container {
+    width: 90%;
+    padding: 10px 0 0 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#patient_tag_add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #33ccff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 2px;
+}
+
+#patient_tag_add > image {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+}
+
+#patient_tag_add > text {
+    font-size: 16px;
+    margin-right: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+#evaluatelab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #33ccff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 2px;
+    font-size:18px;
+}
+
+#evaluatelab > image{
+  width:15px;
+  height:15px;
+  margin:2px;
+}
+
+#evaluatelab>text{
+  font-size:18px;
+  margin-right: 3px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}

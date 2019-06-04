@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "title-banner": "/components/title-banner/index"
+  },
+  "navigationBarTitleText": "评估情况"
+}

@@ -1,0 +1,32 @@
+/* components/title-banner/index.wxss */
+.banner{
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    height: 16vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1195db;
+    color: white;
+    z-index: 90;
+}
+
+.campus{
+    display: flex;
+    align-items: center;
+}
+
+.campus > view {
+    font-weight: 600;
+    font-size: 40rpx;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.campus > image {
+    width: 50rpx;
+    height: 50rpx;
+}
+

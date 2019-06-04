@@ -1,0 +1,35 @@
+<!-- components/drug-add-modal/drug-add-modal.wxml -->
+<view class="modal-mask" style='z-index: 900;' catchtouchmove="preventTouchMove"></view>
+<view class="modal-dialog" style='z-index: 990;top:{{inputTop}}%' catchtouchmove="preventTouchMove">
+    <view class="modal-title">生活计划</view>
+    <view class="modal-content">
+        <view class="item">
+            <label>计划类型</label>
+            <view class="modal-input">
+                <picker mode="selector" 
+                range="{{type}}" 
+                range-key="{{'name'}}" 
+                bindchange="selectType">
+                    <view class="picker-content">{{selectType.name || default.schedule.type.name}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="item h220"> 
+            <label>计划内容</label>            
+            <view class="modal-input h180">
+                <textarea type="text" 
+                bindinput="bindTextInput" 
+                adjust-position='{{false}}'
+                bindfocus="focus"
+                bindblur='noFocus'
+                value="{{content || default.schedule.detail}}" 
+                cursor-spacing="40rpx"></textarea>
+            </view>
+
+        </view>
+    </view>
+    <view class="modal-footer">
+        <view  bindtap="hideModal" data-status="cancel">取消</view>
+        <view  bindtap="onConfirm" data-status="confirm">确定</view>
+    </view>
+</view>

@@ -1,0 +1,84 @@
+/* components/drug-add-modal/drug-add-modal.wxss */
+.modal-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+    color: #fff;
+}
+  
+.modal-dialog {
+    width: 600rpx;
+    overflow: hidden;
+    position: fixed;
+    top: 20%;
+    left: 75rpx;
+    background: #f9f9f9;
+    border-radius: 20rpx;
+}
+  
+.modal-title {
+    padding-top: 40rpx;
+    font-size: 36rpx;
+    color: #030303;
+    text-align: center;
+}
+  
+.modal-content {
+    width: 90%;
+    padding: 40rpx 5%;
+    max-height: 200px;
+    overflow: scroll;
+}
+
+.modal-footer {
+    display: flex;
+    height: 90rpx;
+    border-top: 1px solid #dedede;
+    font-size: 34rpx;
+    line-height: 90rpx;
+}
+
+.modal-footer > view {
+    width: 50%;
+    color: #666;
+    text-align: center;
+}
+
+.modal-footer > view:last-child {
+    border-left: 1px solid #dedede;
+    color: #ec5300;
+}
+
+/* 显示随访与备注 */
+.followup_content {
+    width: 100%;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.followup_content > text:first-child {
+    font-size: 22rpx;
+    margin-right: 10px;
+    width:30%;
+}
+
+.followup_content > text:last-child {
+    font-size: 12px;
+}
+
+.followup_footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bolder;
+    margin-top: 10px;
+}

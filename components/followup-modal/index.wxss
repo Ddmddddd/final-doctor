@@ -1,0 +1,107 @@
+/* components/drug-add-modal/drug-add-modal.wxss */
+.modal-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+    color: #fff;
+}
+  
+.modal-dialog {
+    width: 600rpx;
+    overflow: hidden;
+    position: fixed;
+    top: 20%;
+    left: 75rpx;
+    background: #f9f9f9;
+    border-radius: 20rpx;
+}
+  
+.modal-title {
+    padding-top: 40rpx;
+    font-size: 36rpx;
+    color: #030303;
+    text-align: center;
+}
+  
+.modal-content {
+    padding: 40rpx 0rpx;
+}
+
+.item {
+    width: 100%;
+    height: 120rpx;
+    padding: 0 20rpx 0 20rpx;
+    margin-bottom: 30rpx;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+.item > image{
+    width: 60rpx;
+    height: 60rpx;
+}
+.item > label{
+    width: 25%;
+    padding-left: 10rpx;
+    margin-right: 25rpx; 
+}  
+.modal-input {
+    width: 53%;
+    height: 90rpx;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border: 1rpx solid #ddd;
+    border-radius: 4px;
+}
+.none-border{
+    border: 0px;
+    background-color: #f9f9f9;
+}
+input{
+    width: 100%;
+    height: 90rpx;
+    font-size: 35rpx;
+    line-height: 35rpx;
+    padding: 0 20rpx;
+    text-align: end;
+    box-sizing: border-box;
+    color: #33ccff;
+}
+picker{
+    width: 100%;
+    height: 90rpx;
+    font-size: 40rpx;
+    line-height: 40rpx;
+    padding: 0 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    color:#33ccff
+}
+.modal-footer {
+    display: flex;
+    height: 90rpx;
+    border-top: 1px solid #dedede;
+    font-size: 34rpx;
+    line-height: 90rpx;
+}
+
+  .modal-footer > view {
+    width: 50%;
+    color: #666;
+    text-align: center;
+  }
+
+  .modal-footer > view:last-child {
+    border-left: 1px solid #dedede;
+    color: #ec5300;
+  }
+
+  

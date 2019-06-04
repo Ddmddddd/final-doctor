@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "top-tabbar": "../../../components/top-tabbar/top-tabbar"
+  },
+  "navigationBarTitleText": "课程"
+}

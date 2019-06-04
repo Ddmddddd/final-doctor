@@ -1,0 +1,48 @@
+<view class="login_container">
+  <image
+    src="../../resources/images/bg.jpg"
+    mode="widthFix"
+  />
+  <view id="login_header"><text>健康教育试验管理平台</text></view>
+  <view id="login_form">
+    <view>
+      <image src="../../resources/images/doctor.png"/>
+      <text>账号</text>
+      <input
+        placeholder="username"
+        value="{{username}}"
+        bindinput="inputUsername"
+      />
+    </view>
+
+    <view>
+      <image src="../../resources/images/password.png"/>
+      <text>密码</text>
+      <input
+        placeholder="password"
+        type="password"
+        value="{{password}}"
+        bindinput="inputPassword"
+      />
+    </view>
+  </view>
+  <button
+    type="primary"
+    bindtap="gotoLogin"
+  >{{bind ? "登录" : "绑定账号"}}</button>
+
+  <view id="sperate_view">
+    <text>or</text>
+  </view>
+
+  <button
+      class="wx_login_button"
+      open-type="getUserInfo" 
+      lang="zh_CN"
+      bindgetuserinfo="onGotUserInfoAndLogin">
+    <image src="/resources/images/weixin.jpeg" /><text>微信登录</text>
+  </button>
+  <view wx:if="{{bind === false}}" id="cancel_bind_view" bindtap="cancelBindAccount">
+    <text>取消绑定</text>
+  </view>
+</view>

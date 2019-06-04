@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "personal-kno-modal": "/components/personal-kno-modal/index"
+  },
+  "navigationBarTitleText": "个性化知识" 
+}

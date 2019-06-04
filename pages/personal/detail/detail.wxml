@@ -1,0 +1,33 @@
+<view class="personal_kno_detail">
+
+  <input value="{{kno.title}}" bindinput="changeTitle"></input>
+  <textarea maxlength="{{-1}}" value="{{kno.content}}" bindinput="changeContent"></textarea>
+
+  <view class="personal_tag_bar">
+    <view
+      wx:for="{{kno.types}}"
+      wx:key="{{index}}"
+      bindtap="unbindTagForPersonalKno"
+      data-id="{{item.id}}"
+    >
+      {{item.name}}
+    </view>
+    <view class="add_tag_button" bindtap="showTagModal">
+      <text>+</text>
+    </view>
+  </view>
+
+  <view class="opt_container">
+    <view class="update_del_bar" >
+      <view bindtap="deletePersonalKno"><text>删除</text></view>
+      <view bindtap="updatePersonalKno"><text>更新知识</text></view>
+    </view>
+  </view>
+</view>
+
+<tag-modal
+    wx:if="{{tagModal}}"
+    bindhideModal="hideTagModal"
+    bindconfirm="onTagConfirm"
+    tagList="{{tagList}}"
+/>

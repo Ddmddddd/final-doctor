@@ -1,0 +1,32 @@
+.settings_card_container {
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.settings_card_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.settings_card_container > image {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.settings_card_container > view {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start
+}
+
+.settings_card_container > view > image {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}

@@ -1,0 +1,9 @@
+<!--components/title-banner/index.wxml-->
+<view class="banner">
+    <view class="campus">
+        <view class="campus-name">{{campus1}}</view>
+        <image src="../../resources/images/cooperation.png" mode="aspectFit"/>
+        <view class="campus-name">{{campus2}}</view>
+    </view>
+    <view class="platform">{{platformname}}</view>
+</view>

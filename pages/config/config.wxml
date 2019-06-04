@@ -1,0 +1,19 @@
+<view class="config_container">
+  <view class="config_header">
+    <image src="{{user.avatar}}" />
+    <view>
+      <text>{{user.alias}}</text>
+      <text>, 欢迎您</text>
+    </view>
+  </view>
+  <settings-card
+    wx:for="{{settingsList}}"
+    wx:key="{{index}}"
+    info="{{item}}"
+    bind:gotoSetting="gotoSetting"
+  />
+  
+  <button id="config_logout_button" bindtap="doLogout">
+    <text>退出登录</text>
+  </button>
+</view>

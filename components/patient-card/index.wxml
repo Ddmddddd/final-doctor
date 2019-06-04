@@ -1,0 +1,40 @@
+<view class="patient_card_container" bindtap="gotoManage"
+  style="{{ patient.status == '待随访' ? 'border: 1px solid #FF3030' : ''}}">
+  <view class="subscript" style="background-color: {{colorMap[patient.info.role.id]}}">
+    {{patient.info.role.id == 1 ? '系统组' : patient.info.role.id == 2 ? '个性组' : '对照组'}}
+  </view>
+  <view class="patient_card_header">
+    <view>
+      <text>{{patient.info.name}}</text>
+      <text>{{patient.info.sex}}</text>
+      <text>{{patient.info.age}}岁</text>
+      <text>{{patient.info.doctor != null ? patient.info.doctor.alias : ''}}</text>
+      <text
+        wx:if="{{patient.status == '待随访'}}"
+        class="card_wait_follow"
+      >{{patient.status}}
+      </text>
+    </view>
+
+  </view>
+
+  <view class="patient_card_info">
+    <view class="patient_card_followup">
+      <text>上次随访: {{patient.lastFollowupTime}}</text>
+      <text>下次随访: {{patient.nextFollowupDay}}天</text>
+    </view>
+    <view class="patient_card_manage">
+      <view
+        hover-stop-propagation='true'
+        catchtap="gotoShowNote"
+      ><text>记录</text></view>
+      <view
+        hover-stop-propagation='true'
+        catchtap="gotoFollowup"
+      >
+        <image src="../../resources/images/phone2.png" />
+        <text>随访</text>
+      </view>
+    </view>
+  </view>
+</view>

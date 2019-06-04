@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tag-modal": "/components/tag-modal/index"
+  },
+  "navigationBarTitleText": ""
+}

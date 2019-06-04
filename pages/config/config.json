@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "settings-card": ".../../../../components/settings-card/index"
+  },
+  "navigationBarTitleText": "设置"
+}

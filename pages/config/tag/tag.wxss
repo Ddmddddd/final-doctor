@@ -1,0 +1,55 @@
+.tag_container {
+  width: 100%
+}
+
+.tag_content {
+  width: 90%;
+  padding: 10px 0 0 5%;
+  margin-bottom: 30px;
+}
+
+.tag_parent_content {
+  width: 100%;
+}
+
+.tag_parent_content > view:first-child {
+  margin: 10px 0;
+}
+
+.tag_parent_content > view:first-child > text {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.tag_parent_content > view:last-child {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/*  */
+.addtag_container {
+  position: absolute;
+  bottom: 30px;
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.addtag_container > input { 
+  width: 30%;
+  border-bottom: 1px solid gray;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.addtag_container > view {
+  border: 0.5px solid gray;
+  border-radius: 10px;
+  padding: 2px 8px;
+}

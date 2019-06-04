@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "title-banner": "/components/title-banner/index",
+    "followup-modal": "/components/followup-modal/index",
+    "followup-note-modal": "/components/followup-note-modal/index",
+    "schedule-modal": "/components/schedule-modal/index",
+    "ec-canvas": "/components/ec-canvas/ec-canvas",
+    "patient-tag": "/components/patient-tag/index",
+    "patient-etag": "/components/patient-etag/index",
+    "tag-modal": "/components/tag-modal/index"
+  },
+  "navigationBarTitleText": "患者管理"
+
+}

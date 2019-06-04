@@ -1,0 +1,7 @@
+<view class="tag_item">
+    <text>{{tag.name}}</text>
+    <image
+      src="../../resources/images/trash.png"
+      catchtap="deleteTag"
+    />
+</view>

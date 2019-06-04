@@ -1,0 +1,7 @@
+<view class="settings_card_container" catchtap="gotoSetting">
+  <view>
+    <image src="{{info.imageUrl}}" />
+    <text>{{info.desc}}</text>
+  </view>
+  <image src="{{info.goImageUrl}}" />
+</view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "patient-card": ".../../../../components/patient-card/index",
+    "title-banner": ".../../../../components/title-banner/index",
+    "note-modal": ".../../../../components/note-modal/index"
+  },
+  "navigationBarTitleText": "中心"
+}

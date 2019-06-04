@@ -1,0 +1,28 @@
+<!-- 健康课堂 -->
+<view>
+  <view class="subscribe">
+    <view>欢迎来到健康课堂</view>
+    <!-- <view bindtap="gotoSubscribe"><text>选择课程</text></view> -->
+  </view>
+  <top-tabbar tabbarData="{{tabbarData}}" id="mytab">
+    <view wx:for="{{subscribeList}}" wx:for-item="mainClass" slot="toptab{{index}}" wx:key="index" class="list">
+      <view wx:for="{{classSchedule[mainClass]}}" wx:key="index" wx:for-item="chapter" wx:for-index="cindex" class="chapter">
+        <view bindtap="changeShowStatus" data-stateid="{{[index,cindex]}}" class="select-title {{chapterShow[index][cindex]?'':'closed'}}">
+          <text decode="{{true}}">第{{cindex + 1}}章\t</text>
+          <text>{{chapter.title}}</text>
+        </view>
+        <view wx:if="{{chapterShow[index][cindex]}}" wx:for="{{chapter.child}}" wx:for-item="section" wx:key="id" wx:for-index="sindex" class="section">
+          <view bindtap="changeShowStatus" data-stateid="{{[index,cindex,sindex]}}" class="select-title {{sectionShow[index][cindex][sindex]?'':'closed'}}">
+            <text>第{{sindex + 1}}节\t</text>
+            <text>{{section.title}}</text>
+          </view>
+          <view wx:for="{{section.child}}" wx:for-item="kno" wx:key="id" class="kno" wx:for-index="kindex">
+            <view wx:if="{{sectionShow[index][cindex][sindex]}}" data-kid="{{kno.kid}}" data-cid="{{kno.id}}" data-isLearn="{{kno.isLearn}}" bindtap="gotoStudy">
+              <text class="knoname">{{kno.title}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </top-tabbar>
+</view>

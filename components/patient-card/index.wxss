@@ -1,0 +1,92 @@
+.patient_card_container {
+  width: 90%;
+  position: relative;
+  overflow: hidden;
+  justify-content: space-around;
+  border: 1px solid gray;
+  padding: 5%;
+  margin-bottom: 12rpx;
+  border-radius: 8px;
+}
+
+.patient_card_header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.patient_card_header > view > text:not(:first-child){
+  margin-left: 4px;
+  font-size: 28rpx;
+} 
+
+.patient_card_info {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.card_wait_follow { 
+  margin-left: 4px;
+  font-size: 16px;
+  color: red;
+}
+
+.patient_card_followup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 30rpx;
+}
+.patient_card_followup > text:last-child {
+  margin-top: 2px;
+}
+
+.patient_card_manage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.patient_card_manage > view {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  border-radius: 20rpx;
+  padding: 0 10px;
+}
+.patient_card_manage > view:first-child {
+  margin-right: 6px;
+  border: 1px solid gray;
+}
+.patient_card_manage > view:last-child {
+  background-color: #19ad1a
+}
+.patient_card_manage > view:last-child > image {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.subscript{
+  color: #fff;
+  height: 50rpx;
+  width: 260rpx;
+  position: absolute;
+  right: -70rpx;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 36rpx;
+  font-family: "黑体";
+  background-color: #0c60ee;
+  -moz-transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
+  -o-transform:rotate(45deg);
+  -ms-transform:rotate(45deg);
+  transform:rotate(45deg);
+}

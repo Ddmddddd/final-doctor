@@ -1,0 +1,66 @@
+<view class="index_container">
+  <title-banner></title-banner>
+
+  <view id="index_search_bar">
+    <view>
+      <text>分组：</text>
+      <picker
+        mode="selector"
+        bindchange="bindRolePickerChange"
+        range-key="name"
+        range="{{patientRoleArr}}"
+      >
+        {{currentRole.name}}
+      </picker>
+    </view>
+    <view>
+      <image src="../../resources/images/search.png" />
+      <input value="{{keyword}}" bindinput="bindKeywordChange"/>
+    </view>
+  </view>
+
+  <view id="index_add_patient">
+    <view bindtap="tabToRefresh">
+      <image src="../../resources/images/refresh.png" />
+      <text>患者列表({{allPatientNum}})</text>
+    </view>
+    <view bindtap="addPatient" >
+      <image src="../../resources/images/add.png" />
+      <text>添加患者</text>
+    </view>
+  </view>
+
+  <view id="index_patient_list">
+
+    <view id="index_loading_list" wx:if="{{loading == true}}">
+      <image src="../../resources/images/loadingpat.gif" />
+    </view>
+
+    <view wx:elif="{{loading == false && patientList.length == 0}}" id="index_empty_list">
+      <image src="../../resources/images/none.png" />
+      <text>没有找到患者</text>
+    </view>
+
+    <view wx:else class="patient_list_content">
+      <patient-card
+        wx:for="{{patientList}}"
+        wx:key="{{item.id}}"
+        patient="{{item}}"
+        bindgotoManage="gotoManage"
+        bindgotoShowNote="gotoShowNote"
+      />
+    </view>
+  </view>
+
+  <view
+    wx:if="{{loading == false && loadingOver == true && patientList.length > pageSize}}"
+    class="loading_over_footer">
+    <text>不要再下拉啦，赶快录新患者吧</text>
+  </view>
+</view>
+
+<note-modal
+    wx:if="{{followupNoteModal}}"
+    bindhideModal="hideFollowupNoteModal"
+    patientId="{{currentPatientId}}"
+/>

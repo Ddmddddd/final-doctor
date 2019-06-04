@@ -1,0 +1,63 @@
+<title-banner></title-banner>
+<view class="patient-container">
+    <view id="patient-edit-header">
+        <text wx:if="{{patientId}}">更新患者</text>
+        <text wx:else>新增患者</text>
+    </view>
+    <view class="patient-info">
+        <view>患者姓名：</view>
+        <view class="{{focusArr[0]?'focus':''}}">
+            <input data-info="0" type="text" value="{{patientInfo.name}}" bindinput="valueInput" bindblur="focusToggle" cursor-spacing="40rpx" bindfocus="focusToggle" />
+        </view>
+    </view>
+    <view class="patient-info">
+        <view>身份证号：</view>
+        <view class="{{focusArr[1]?'focus':''}}">
+            <input
+                data-info="1" type="text" value="{{patientInfo.patientId}}" bindinput="valueInput" bindblur="focusToggle" cursor-spacing="40rpx" bindfocus="focusToggle" />
+        </view>
+    </view>
+    <view class="patient-info">
+        <view>性别：</view>
+        <view>
+            <picker mode="selector" range="{{sexArr}}" bindchange="selectSex">
+                <view class="picker-item">{{patientInfo.sex}}</view>
+            </picker>
+        </view>
+    </view>    
+    <!-- <view class="patient-info">
+        <view>年龄：</view>
+        <view>
+            <input type="text" value="{{patientInfo.age}}" bindinput="ageInput" />
+        </view>
+    </view> -->
+    <view class="patient-info">
+        <view>手机号：</view>
+        <view class="{{focusArr[2]?'focus':''}}">
+            <input data-info="2" type="text" value="{{patientInfo.phoneNumber}}" bindinput="valueInput" bindblur="focusToggle" cursor-spacing="40rpx" bindfocus="focusToggle" />
+        </view>
+    </view>
+    <view class="patient-info">
+        <view>实验组：</view>
+        <view>
+            <picker mode="selector" range="{{role}}" range-key="name" bindchange="selectRole">
+                <view class="picker-item">{{currentRole.name}}</view>
+            </picker>
+            <!-- <image src="../../resources/images/arrow.png" style="width:45rpx;height:40rpx;" /> -->
+        </view>
+    </view>
+
+    <view class="patient-info">
+        <view>管理医生：</view>
+        <view>
+            <picker mode="selector" range="{{doctorList}}" range-key="alias" bindchange="selectDoctor">
+                <view class="picker-item">{{currentDoctor.alias}}</view>
+            </picker>
+        </view>
+    </view>  
+
+    <view class="button-group">
+        <button bindtap="clearAll">清除</button>
+        <button type="primary" bindtap="tapConfirm">确认</button>
+    </view>
+</view>

@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/start/start",
+    "pages/index/index",
+    "pages/login/login",
+    "pages/manage/manage",
+    "pages/patient/patient",
+    "pages/config/config",
+    "pages/class/class",
+    "pages/class/class-content/class-content",
+    "pages/config/tag/tag",
+    "pages/config/module/module",
+    "pages/personal/personal",
+    "pages/personal/detail/detail",
+    "pages/evaluate/evaluate",
+    "components/patient-etag/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#0A0A0A",
+    "selectedColor": "#1E90FF",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "列表",
+        "iconPath": "resources/images/list.png",
+        "selectedIconPath": "resources/images/list-selected.png"
+      },
+      {
+        "pagePath": "pages/config/config",
+        "text": "配置",
+        "iconPath": "resources/images/config.png",
+        "selectedIconPath": "resources/images/config-selected.png"
+      }
+    ]
+  },
+  "plugins": {
+    "WechatSI": {
+      "version": "0.2.2",
+      "provider": "wx069ba97219f66d99"
+    }
+  }
+}

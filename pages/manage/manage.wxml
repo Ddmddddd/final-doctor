@@ -1,0 +1,212 @@
+<!--pages/manage/manage.wxml-->
+<view class="manage_main_container">
+    <title-banner></title-banner> 
+    <view class="patient-content">
+        <view class="basic">
+            <view class="title animated slideInLeft fast">
+                <text>{{patient.name}}</text>
+                <text>{{patient.sex}} {{patient.age}}岁 电话：{{patient.phoneNumber}}</text>
+            </view>
+            <view>
+                <image src="../../resources/images/phone.png" 
+                mode="aspectFit" 
+                bindtap="makePhoneCall"
+                style="width:80rpx;height:80rpx" />
+            </view>
+        </view>
+
+        <view class="followup">
+            <view class="title animated slideInLeft fast">
+                <text>随访管理</text>
+                <text>Followup Controller</text>
+            </view>
+            <view class="content">
+                <view>
+                    <text>临近随访: </text>
+                    <text>{{followupTime}}</text>
+                </view>
+                <view>
+                    <image src="../../resources/images/fix.png" 
+                    mode="aspectFit" 
+                    bindtap="showFollowupModal"
+                    style="width:55rpx;height:55rpx"/>
+                    <image src="../../resources/images/finish.png" 
+                    mode="aspectFit" 
+                    bindtap="followupComplete"
+                    style="width:60rpx;height:60rpx"/>
+                </view>
+            </view>
+        </view>
+
+        <view class="patient_tag">
+            <view class="basic">
+                <view class="title animated slideInLeft fast">
+                    <text>标签</text>  
+                    <text>Patient Type</text>
+                </view>
+            </view>
+
+            <!-- 患者的标签可编辑视图 -->
+            <view class="patient_tag_container">
+                <navigator wx:if="{{evaluatelab}}" url='../evaluate/evaluate?id={{patientId}}&name={{patient.name}}&age={{patient.age}}&sex={{patient.sex}}&phoneNumber={{patient.phoneNumber}}' id='evaluatelab'>
+                <image src="/resources/images/warn.png"/>
+                <text>患者最近进行了一次风险评估，请查看</text>
+                </navigator>
+                <patient-etag
+                    wx:if="{{drinkid}}"
+                    tag="{{drink}}"
+                    binddeleteTag="deleteeTag"
+                />
+                <patient-etag
+                    wx:if="{{smokeid}}"
+                    tag="{{smoke}}"
+                    binddeleteTag="deleteeTag"
+                />
+                <patient-etag
+                wx:if="{{bmiid}}"
+                    tag="{{bmi}}"
+                    binddeleteTag="deleteeTag"
+                />
+                <patient-etag
+                wx:if="{{diaid}}"
+                    tag="{{dia}}"
+                    binddeleteTag="deleteeTag"
+                />
+                <patient-etag
+                wx:if="{{sbpid}}"
+                    tag="{{sbp}}"
+                    binddeleteTag="deleteeTag"
+                />
+                <patient-etag
+                wx:if="{{tcid}}"
+                    tag="{{tc}}"
+                    binddeleteTag="deleteeTag"
+                />
+                <patient-etag
+                wx:if="{{Hdlcid}}"
+                    tag="{{Hdlc}}"
+                    binddeleteTag="deleteeTag"
+                />
+                <patient-tag
+                    wx:for="{{patient.types}}"
+                    wx:key="{{index}}"
+                    tag="{{item}}"
+                    binddeleteTag="deleteTag"
+                />
+                <view id="patient_tag_add" bindtap="showTagModal">
+                    <image src="/resources/images/add2.png" />
+                    <text>添加标签</text>
+                </view>
+            </view>
+        </view>
+
+        <view class="schedule">
+            <view class="basic">
+                <view class="title animated slideInLeft fast">
+                    <text>生活计划</text>  
+                    <text>Schedule Controller</text>
+                </view>
+                <view>
+                    <image src="../../resources/images/add.png" 
+                    mode="aspectFit" 
+                    data-index="{{-1}}"
+                    data-typeid="{{null}}"
+                    bindtap="showScheduleModal"
+                    style="width:80rpx;height:80rpx"/>
+                </view>
+            </view>
+
+            <view class="content" wx:for="{{schedule}}" wx:key="" >
+                <view class="tag" style="background-color: {{item.schedule.type.color}}">{{item.schedule.type.name}}</view>
+                <view class="schedule_detail detail">
+                    <text>{{item.schedule.detail}}</text>
+                    <text>完成{{item.complete}}/{{item.all}}</text>
+                </view>
+                <image
+                    src="../../resources/images/fix.png" 
+                    mode="aspectFit" 
+                    bindtap="showScheduleModal"
+                    data-index="{{index}}"
+                    data-typeid="{{item.schedule.type.id}}"
+                    style="width:55rpx;height:55rpx"
+                />
+                <image
+                    src="../../resources/images/delete.png" 
+                    mode="aspectFit" 
+                    bindtap="scheduleDelete"
+                    data-index="{{index}}"
+                    style="width:60rpx;height:60rpx"
+                />
+            </view>
+        </view>
+
+        <view class="education">
+            <view class="basic">
+                <view class="title animated slideInLeft fast">
+                    <text>教育</text>  
+                    <text>Education</text>
+                </view>
+            </view>
+
+            <view
+                wx:for="{{education}}"
+                wx:key="{{key}}"
+                wx:for-index="key"
+                wx:for-item="value" >
+                {{key}} : {{value}}
+            </view>
+        </view>
+
+        <view class="bloodpressure">
+            <view class="basic">
+                <view class="title animated slideInLeft fast">
+                    <text>血压</text>  
+                    <text>Blood Pressure</text>
+                </view>
+            </view>
+            <view>
+                <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+            </view>
+        </view>
+
+        <view class="manage">
+            <view class="basic">
+                <view class="title animated slideInLeft fast">
+                    <text>管理</text>  
+                    <text>Management</text>
+                </view>
+            </view>
+
+            <view class="manage_content" bindtap="gotoEditPatientInfo">
+                <image src="../../resources/images/edit.png" />
+                <text>点击修改患者个人信息</text>
+            </view>
+            <view class="manage_content" bindtap="deletePatient">
+                <image src="../../resources/images/delete-patient.png" />
+                <text style="color: #f00">删除患者</text>
+            </view>
+        </view>
+    </view> 
+</view>
+<followup-modal wx:if="{{followupModal}}" 
+    bindhideModal="hideFollowupModal" 
+    default="{{followupTime}}" 
+    bindeditDate="followupEdit" />
+<schedule-modal wx:if="{{scheduleModal}}" 
+    bindhideModal="hideScheduleModal" 
+    default="{{defaultSchedule}}"
+    typeId="{{selectedTypeId}}"
+    index="{{index}}" 
+    bindeditData="scheduleEdit" />
+<tag-modal
+    wx:if="{{tagModal}}"
+    bindhideModal="hideTagModal"
+    bindconfirm="onTagConfirm"
+/>
+<followup-note-modal
+    wx:if="{{followupNoteModal}}"
+    bindhideModal="hideFollowupNoteModal"
+    bindonConfirm="editFollowupNoteComplete"
+/>
+
+

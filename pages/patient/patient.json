@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "title-banner": ".../../../../components/title-banner/index"
+  },
+  "navigationBarTitleText": "添加患者"
+}

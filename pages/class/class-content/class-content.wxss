@@ -1,0 +1,26 @@
+/* pages/class/class-learn/class-learn.wxss */
+page{
+  background-color: white;
+}
+.container{
+  padding-top: 0px;
+}
+.title{
+  width: 80%;
+  font-size: 44rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  margin: 40rpx 0 20rpx 40rpx;
+  border-bottom: 1px solid #ddd
+}
+.wxParser{
+  padding: 0 20px 0 20px
+}
+.image-content{
+  width:92vw;
+  margin-left: 4vw;
+}
+.video-content{
+  width:92vw;
+  margin-left: 4vw;
+}

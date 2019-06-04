@@ -1,0 +1,27 @@
+.module_container {
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.module_item {
+  /* width: 23%; */
+  margin: 8px 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.module_item > view {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.module_item > text {
+  margin-top: 4px;
+}

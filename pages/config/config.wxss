@@ -1,0 +1,37 @@
+.config_container {
+  width: 100%;
+}
+.config_header {
+  width: 90%;
+  margin: 6px 0 10px 5%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.config_header > image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.config_header > view > text:first-child {
+  font-size: 24px;
+}
+.config_header > view > text:last-child {
+  font-size: 20px;
+}
+#config_logout_button {
+  position: absolute;
+  bottom: 50px;
+  background-color: #FF7F24;
+  border-radius: 10px;
+  width: 80%;
+  margin-left: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.config_logout_button > text {
+  font-weight: bold;
+}

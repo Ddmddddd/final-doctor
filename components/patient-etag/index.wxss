@@ -1,0 +1,25 @@
+.tag_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #33ccff;
+  /* background-color: #33ccff; */
+  /* color: white; */
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-right: 6px;
+  padding: 2px;
+}
+
+.tag_item > text {
+  font-size: 16px;
+  text-align: center;
+  padding: 4px;
+  padding-left: 10px;
+}
+
+.tag_item > image {
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+}
